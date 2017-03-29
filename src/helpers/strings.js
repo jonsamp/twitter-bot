@@ -1,12 +1,12 @@
 module.exports = {
   queryString: [
     'codecademy',
+    'codeacademy',
     'codenewbie',
     'devdiscuss',
     'freecodecamp',
     '100daysofcode',
     '301daysofcode',
-    'atom',
     'javascript'
   ],
   queryStringSubQuery: [
