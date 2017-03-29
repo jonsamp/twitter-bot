@@ -14,7 +14,10 @@ module.exports = {
     'react.js',
     'node',
     'nodejs',
-    'learn to code'
+    'learn to code',
+    'ecmascript',
+    'vuejs',
+    '#js'
   ],
   queryStringSubQuery: [
     '',
