@@ -61,7 +61,6 @@ var favoriteTweet = function() {
 				httpCall.send('txt=' + favoriteText).end(function(result) {
 					var sentim = result.body.result.sentiment
 					var confidence = parseFloat(result.body.result.confidence)
-					console.log(confidence, sentim)
 					// if sentiment is Negative and the confidence is above 75%
 					if (sentim === 'Negative' && confidence >= 75) {
 						console.log('Did not favorite tweet due to negativity: ', sentim, favoriteText)
