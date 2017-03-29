@@ -32,8 +32,5 @@ module.exports = {
   ],
   resultType: [
     'recent'
-  ],
-  responseString: [
-    'Hi @screenName thanks for the following!'
   ]
 }

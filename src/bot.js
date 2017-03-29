@@ -23,7 +23,6 @@ const username = config.twitter.username
 let qs = ura(strings.queryString)
 let qsSq = ura(strings.queryStringSubQuery)
 let rt = ura(strings.resultType)
-let rs = ura(strings.responseString)
 
 // https://dev.twitter.com/rest/reference/get/search/tweets
 // A UTF-8, URL-encoded search query of 500 characters maximum, including operators.
@@ -47,10 +46,14 @@ var favoriteTweet = function() {
 		if (err) {
 			console.log(`ERR CAN'T FIND TWEET:`, err)
 		} else {
-			// find tweets
-			var tweet = data.statuses
+			// find current tweets
+			var currentStatuses = data.statuses.filter(function(status) {
+		       return /2017/.test(status.created_at)
+		     });
+		
+			var tweet = currentStatuses
 			var randomTweet = ranDom(tweet) // pick a random tweet
-
+			
 			// if random tweet exists
 			if (typeof randomTweet !== 'undefined') {
 				// run sentiment check ==========
