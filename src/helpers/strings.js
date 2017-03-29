@@ -30,9 +30,7 @@ module.exports = {
     'sex'
   ],
   resultType: [
-    'mixed',
-    'recent',
-    'popular'
+    'recent'
   ],
   responseString: [
     'Hi @screenName thanks for the following!'
