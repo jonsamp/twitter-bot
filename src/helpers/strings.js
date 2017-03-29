@@ -20,17 +20,18 @@ module.exports = {
     '#js'
   ],
   queryStringSubQuery: [
-    '',
-    ' tip',
-    'learn ',
-    ' learn'
+    ''
   ],
   blockedStrings: [
     'porn',
-    'sex',
-    'supercoder'
+    'sex'
   ],
   resultType: [
-    'recent'
+    'mixed',
+    'recent',
+    'popular'
+  ],
+  responseString: [
+    'Hi @screenName thanks for the following!'
   ]
 }

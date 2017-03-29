@@ -23,6 +23,7 @@ const username = config.twitter.username
 let qs = ura(strings.queryString)
 let qsSq = ura(strings.queryStringSubQuery)
 let rt = ura(strings.resultType)
+let rs = ura(strings.responseString)
 
 // https://dev.twitter.com/rest/reference/get/search/tweets
 // A UTF-8, URL-encoded search query of 500 characters maximum, including operators.
@@ -44,19 +45,18 @@ var favoriteTweet = function() {
 	// find the tweet
 	Twitter.get('search/tweets', params, function(err, data) {
 		if (err) {
-			console.log(`ERR CAN'T FIND TWEET:`, err)
+			console.log('Can\'t find tweet.')
 		} else {
-			// find current tweets
-			var currentStatuses = data.statuses.filter(function(status) {
-		       return /2017/.test(status.created_at)
-		     });
-		
-			var tweet = currentStatuses
+			// find tweets
+			var tweet = data.statuses.filter(function(status) { 
+			  return /2017/.test(status.created_at)
+			  
+			})
 			var randomTweet = ranDom(tweet) // pick a random tweet
-			
+
 			// if random tweet exists
 			if (typeof randomTweet !== 'undefined') {
-				// run sentiment check ==========
+				// run sentiment check
 				// setup http call
 				var httpCall = sentiment.init()
 				var favoriteText = randomTweet['text']
@@ -66,7 +66,7 @@ var favoriteTweet = function() {
 					var confidence = parseFloat(result.body.result.confidence)
 					// if sentiment is Negative and the confidence is above 75%
 					if (sentim === 'Negative' && confidence >= 75) {
-						console.log('Did not favorite tweet due to negativity: ', sentim, favoriteText)
+						console.log('Did not favorite tweet due to negativity: ', favoriteText)
 						return
 					} else {
 					  // Tell TWITTER to 'favorite'
@@ -75,15 +75,15 @@ var favoriteTweet = function() {
 				}, function(err, response) {
 					// if there was an error while 'favorite'
 					if (err) {
-						console.log('CANNOT BE FAVORITE... Error: ', err, ' Query String: ' + paramQS)
+						console.log('Already favorited tweet.')
 					} else {
-					  console.log("Favorited: @" + response.user.screen_name + ": " + response.text + ", (" + response.user.created_at + ")");
+					  console.log("Favorited: @" + response.user.screen_name + ": " + response.text + ", (" + response.created_at + ")");
 					}
 				})
 					}
 				})
 			} else {
-        console.log('No tweet found.')
+        console.log('No tweet found for query: ' + paramQS)
         return;
       }
 		}
