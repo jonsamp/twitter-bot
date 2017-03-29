@@ -1,3 +1,20 @@
+# How to
+
+## See the logs
+```
+heroku logs -t
+```
+
+## Shutdown or start up worker
+```
+heroku ps:scale worker=0
+heroku ps:scale worker=1
+```
+
+## Push a change
+1. `git commit -am "..."`
+2. `git push heroku master`
+
 # Twitter bot bootstrap
 
 [![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](http://standardjs.com/) [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](http://opensource.org/licenses/MIT)

@@ -75,8 +75,7 @@ var favoriteTweet = function() {
 					if (err) {
 						console.log('CANNOT BE FAVORITE... Error: ', err, ' Query String: ' + paramQS)
 					} else {
-					  console.log("Favorited: " + response.text);
-					  console.log("By: @" + response.user.screen_name)
+					  console.log("Favorited: @" + response.user.screen_name + ": " + response.text + ", (" + response.user.created_at + ")");
 					}
 				})
 					}

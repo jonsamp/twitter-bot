@@ -7,7 +7,14 @@ module.exports = {
     'freecodecamp',
     '100daysofcode',
     '301daysofcode',
-    'javascript'
+    'javascript',
+    `scss`,
+    'webpack',
+    'reactjs',
+    'react.js',
+    'node',
+    'nodejs',
+    'learn to code'
   ],
   queryStringSubQuery: [
     '',
