@@ -1,14 +1,10 @@
 module.exports = {
   queryString: [
     'codecademy',
-    'codeacademy',
-    'codenewbie',
     '#codenewbie',
-    'devdiscuss',
     '#devdiscuss',
     'freecodecamp',
     '#100daysofcode',
-    '#301daysofcode',
     'javascript',
     'reactjs',
     'react.js',
@@ -20,7 +16,8 @@ module.exports = {
   ],
   blockedStrings: [
     'porn',
-    'sex'
+    'sex',
+    'supercoder'
   ],
   resultType: [
     'mixed',
