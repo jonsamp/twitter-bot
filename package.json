@@ -21,5 +21,13 @@
     "unirest": "^0.5.1",
     "snyk": "^1.25.1"
   },
-  "snyk": true
+  "snyk": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spences10/twitter-bot-bootstrap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/spences10/twitter-bot-bootstrap/issues"
+  },
+  "homepage": "https://github.com/spences10/twitter-bot-bootstrap#readme"
 }
