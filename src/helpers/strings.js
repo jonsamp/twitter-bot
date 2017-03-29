@@ -3,21 +3,17 @@ module.exports = {
     'codecademy',
     'codeacademy',
     'codenewbie',
+    '#codenewbie',
     'devdiscuss',
+    '#devdiscuss',
     'freecodecamp',
-    '100daysofcode',
-    '301daysofcode',
+    '#100daysofcode',
+    '#301daysofcode',
     'javascript',
-    `scss`,
-    'webpack',
     'reactjs',
     'react.js',
-    'node',
-    'nodejs',
     'learn to code',
-    'ecmascript',
-    'vuejs',
-    '#js'
+    'ecmascript'
   ],
   queryStringSubQuery: [
     ''
