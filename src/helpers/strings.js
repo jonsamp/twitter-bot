@@ -27,7 +27,8 @@ module.exports = {
   ],
   blockedStrings: [
     'porn',
-    'sex'
+    'sex',
+    'supercoder'
   ],
   resultType: [
     'recent'
