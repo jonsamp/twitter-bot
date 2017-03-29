@@ -77,12 +77,14 @@ var favoriteTweet = function() {
 					} else {
 					  console.log("Favorited: " + response.text);
 					  console.log("By: @" + response.user.screen_name)
-					  console.log("---------")
 					}
 				})
 					}
 				})
-			}
+			} else {
+        console.log('No tweet found.')
+        return;
+      }
 		}
 	})
 }
@@ -91,31 +93,6 @@ var favoriteTweet = function() {
 favoriteTweet()
 // favorite in every x minutes
 setInterval(favoriteTweet, 1000 * 60 * favoriteFrequency)
-
-// STREAM API for interacting with a USER =======
-// set up a user stream
-var stream = Twitter.stream('user')
-
-// REPLY-FOLLOW BOT ============================
-
-// what to do when someone follows you?
-stream.on('follow', followed)
-
-// ...trigger the callback
-function followed(event) {
-	console.log('Follow Event now RUNNING')
-	// get USER's twitter handle (screen name)
-	var screenName = event.source.screen_name
-
-	// CREATE RANDOM RESPONSE  ============================
-	var responseString = rs()
-	var find = 'screenName'
-	var regex = new RegExp(find, 'g')
-	responseString = responseString.replace(regex, screenName)
-
-	// function that replies back to every USER who followed for the first time
-	console.log(responseString)
-}
 
 // function to generate a random tweet tweet
 function ranDom(arr) {
